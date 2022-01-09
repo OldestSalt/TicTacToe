@@ -1,0 +1,68 @@
+@import (once) "common.less";
+
+@keyframes loading-icon {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes loading-cross {
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}
+
+main {
+    .center();
+    flex-direction: column;
+    gap: 20px;
+    table {
+        width: 600px;
+        height: 600px;
+        border-collapse: collapse;
+        tr {
+            height: 33%;
+            border-top: solid @accent 7px;
+            &:first-child {
+                border-top: none;
+            }
+            td {
+                width: 33%;
+                background-image: url(../img/nought.png);
+                background-size: 80% 80%;
+                background-position: center;
+                background-repeat: no-repeat;
+                border-left: solid @accent 7px;
+                &:first-child {
+                    border-left: none;
+                }
+            }
+        }
+    }
+    #info {
+        font-size: 50px;
+        font-weight: bold;
+        text-align: center;
+        
+    }
+}
+
+#loading {
+    position: absolute;
+    display: flex;
+    gap: 20px;
+    animation: 2s linear infinite loading-icon;
+    top: 40vh;
+    img {
+        width: 40px;
+    }
+    .cross {
+        animation: 2s linear infinite loading-cross;
+    }
+}
