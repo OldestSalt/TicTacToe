@@ -1,0 +1,50 @@
+@import (once) "common.less";
+
+main {
+    .center();
+    gap: 30px;
+    flex-direction: column;
+    .warning {
+        padding: 15px 10px;
+        text-align: center;
+        font-size: 30px;
+        width: 100%;
+    }
+
+    form {
+        .center();
+        gap: 30px;
+        flex-direction: column;
+        button {
+            background-color: @accent;
+            color: #fff;
+            border-radius: 7px;
+            transition: .1s ease-in-out;
+            font: bold 40px 'Comfortaa';
+            padding: 15px 12px;
+            &:hover {
+                background-color: #7a57b8;
+                transform: scale(1.05);
+            }
+            &:active {
+                background-color: #6a30cf;
+                transform: scale(.95);
+            }
+        }
+    
+        input {
+            border-radius: 10px;
+            font-size: 45px;
+            font-family: 'Comfortaa';
+            background-color: #ddd;
+            text-align: center;
+            padding: 7px 5px;
+            &::placeholder {
+                font-family: 'Comfortaa';
+                font-size: 45px;
+                text-align: center;
+            }
+        }
+    }
+
+}

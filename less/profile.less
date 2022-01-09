@@ -1,0 +1,121 @@
+@import (once) "common.less";
+
+main {
+    .center();
+    flex-direction: column;
+    justify-content: space-evenly;
+    #avatar-wrap {
+        .center();
+        flex-direction: column;
+        gap: 20px;
+        #avatar {
+            position: relative;
+            width: 200px;
+            cursor: pointer;
+            div {
+                transition: .2s ease-in-out;
+                border: solid .4vh @accent;
+                background-size: cover;
+                background-position: center;
+                border-radius: 50%;
+                width: 100%;
+                padding-bottom: calc(100% - .8vh);
+            }
+        }
+        #user-name {
+            font-weight: bold;
+            font-size: 55px;
+        }
+    }
+}
+
+.window-wrap {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, .8);
+    user-select: none;
+    .center();
+    .window {
+        border: solid .1vh @accent;
+        background-color: #fff;
+        border-radius: 1vw;
+        button {
+            border-radius: 1vh;
+            background-color: @accent;
+            font-family: 'Comfortaa';
+            font-weight: bold;
+            font-size: 35px;
+            color: #fff;
+            transition: .2s ease-in-out;
+            padding: 15px;
+            &:hover {
+                background-color: #7a57b8;
+                transform: scale(1.05);
+            }
+            &:active {
+                background-color: #6a30cf;
+                transform: scale(.95);
+            }
+        }
+    }
+}
+
+#avatar-choice div form {
+    .center();
+    flex-direction: column;
+    gap: 25px;
+    padding: 25px;
+    input {
+        display: none;
+    }
+    label {
+        display: block;
+        color: #fff;
+        font: bold 35px 'Comfortaa';
+        background-color: @accent;
+        padding: 15px 35px;
+        border-radius: .5vw;
+        transition: .2s ease-in-out;
+        &:hover {
+            background-color: #571fb8;
+        }
+        &:active {
+            transform: scale(.95);
+            background-color: #240a50;
+
+        }
+    }
+}
+
+.icon {
+    position: absolute;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 1;
+    border-radius: 50%;
+    opacity: 0;
+    transition: .2s ease-in-out;
+    &:hover {
+        opacity: 1;
+    }
+}
+
+#stats-games {
+    display: grid;
+    grid-template: 1fr / repeat(3, 1fr);
+    align-items: baseline;
+    text-align: center;
+    font-size: 35px;
+    gap: 5vh 4vw;
+    & > * {
+        .center();
+        flex-direction: column;
+        span {
+            font-size: 60px;
+            font-weight: bold;
+            color: @accent;
+        }
+    }
+}
